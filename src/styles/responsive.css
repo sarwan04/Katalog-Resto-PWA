@@ -1,0 +1,96 @@
+.nav-bar .nav-bar__navigation ul li a,
+.nav-bar .nav-bar__navigation ul li button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  color: white;
+  padding: 0px 30px 0px 0px;
+  min-width: 44px;
+  min-height: 44px;
+  width: 120px;
+}
+
+#hamburgerButton {
+  min-width: 44px;
+  min-height: 44px;
+}
+
+/* Media query untuk layar dengan lebar minimal 650px */
+@media screen and (min-width: 650px) {
+  .nav-bar {
+    grid-template-columns: 1fr auto;
+    padding: 8px 32px;
+  }
+
+  .nav-bar .nav-bar__brand h1 {
+    font-size: 1.5em;
+  }
+
+  .nav-bar .nav-bar__menu {
+    display: none;
+  }
+
+  .nav-bar .nav-bar__navigation {
+    position: static;
+    width: 100%;
+  }
+
+  .nav-bar .nav-bar__navigation ul li {
+    display: inline-block;
+  }
+
+  .nav-bar .nav-bar__navigation ul li a {
+    width: auto;
+  }
+
+  .nav-bar .nav-bar__navigation ul li button {
+    width: auto;
+  }
+
+  .restos {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .resto {
+    grid-template-columns: auto 1fr;
+  }
+
+  .resto .resto__title {
+    grid-column-start: 1;
+    grid-column-end: 3;
+  }
+
+  .resto .resto__overview {
+    grid-column-start: 1;
+    grid-column-end: 3;
+  }
+}
+
+/* Media query untuk layar dengan lebar minimal 800px */
+@media screen and (min-width: 800px) {
+  .nav-bar .nav-bar__brand h1 {
+    font-size: 2em;
+  }
+}
+
+/* Media query untuk layar dengan lebar minimal 850px */
+@media screen and (min-width: 850px) {
+  .restos {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* Media query untuk layar dengan lebar minimal 1200px */
+@media screen and (min-width: 1200px) {
+  .restos {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+/* Media query untuk layar dengan lebar minimal 1600px */
+@media screen and (min-width: 1600px) {
+  .restos {
+    grid-template-columns: repeat(5, 1fr);
+  }
+}

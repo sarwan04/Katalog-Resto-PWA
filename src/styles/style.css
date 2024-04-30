@@ -1,0 +1,381 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bad+Script&display=swap');
+
+* {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: white;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/*
+ AppBar
+*/
+
+.nav-bar {
+  padding: 8px 16px;
+  background-color: #1f79c3;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  gap: 10px;
+  position: sticky;
+  top: 0;
+  z-index: 99;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
+}
+
+.nav-bar .nav-bar__menu {
+  display: flex;
+  align-items: center;
+}
+
+.nav-bar .nav-bar__menu button {
+  background-color: transparent;
+  border: none;
+  font-size: 18px;
+  color: white;
+  padding: 8px;
+  cursor: pointer;
+}
+
+.nav-bar .nav-bar__brand {
+  display: flex;
+  align-items: center;
+}
+
+.nav-bar .nav-bar__brand,
+h2 {
+  color: white;
+  font-size: 20px;
+  font-weight: lighter;
+  user-select: none;
+}
+
+.nav-bar .nav-bar__navigation {
+  position: absolute;
+  top: 50px;
+  left: -180px;
+  width: 150px;
+  transition: all 0.3s;
+  padding: 8px;
+  background-color: #1f79c3;
+  overflow: hidden;
+}
+
+.nav-bar .nav-bar__navigation.open {
+  left: 0;
+}
+
+.nav-bar .nav-bar__navigation ul li a {
+  display: inline-block;
+  text-decoration: none;
+  color: white;
+  padding: 8px;
+  margin-bottom: 5px;
+  width: 100%;
+}
+
+/*
+ Skip Content
+*/
+.skip-link {
+  position: absolute;
+  top: -100px;
+  left: 0;
+  background-color: #bf1722;
+  color: white;
+  padding: 10px;
+  font-size: 20px;
+  z-index: 100;
+  text-decoration: none;
+  height: 44px;
+  min-width: 44px;
+}
+.skip-link:focus {
+  top: 100px;
+}
+
+/*
+ Main Content
+*/
+
+main {
+  padding-left: 32px;
+  padding-right: 32px;
+  flex: 1;
+}
+
+.content {
+  margin: 0 auto;
+  min-height: 100%;
+}
+
+.content .content__heading {
+  font-weight: normal;
+  justify-content: center;
+  color: black;
+}
+
+/*
+ restos
+*/
+
+.restos {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+  margin: 32px 0;
+}
+
+/*
+ resto Item
+*/
+
+.resto-item {
+  width: 100%;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.resto-item__header {
+  position: relative;
+}
+
+.resto-item__header__city {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: rgba(0, 0, 0, 0.562);
+  color: white;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+.resto-item .resto-item__header .resto-item__header__poster {
+  width: 100%;
+  height: 280px;
+}
+
+.resto-item__header__rating__score {
+  font-weight: 600;
+}
+
+.resto-item__header__rating__text {
+  margin-right: 25px;
+  font-weight: 600;
+}
+
+.resto-item__description {
+  margin-top: 15px;
+}
+
+.resto-item .resto-item__content .resto-item__content__city {
+  margin-left: 5px;
+  display: inline-block;
+  position: absolute;
+  padding: 0px;
+}
+
+.resto-item .resto-item__content {
+  padding: 16px;
+}
+
+.resto-item .resto-item__content h3 {
+  margin: 0 0 10px 0;
+}
+
+.resto-item .resto-item__content h3 a {
+  color: #db0000;
+  text-decoration: none;
+  display: inline-block;
+  padding: 0px;
+  min-width: 44px;
+  min-height: 44px;
+  box-sizing: border-box;
+}
+
+.resto-item .resto-item__content p {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 4; /* number of lines to show */
+  -webkit-box-orient: vertical;
+}
+
+/*
+ resto
+*/
+
+.resto {
+  margin: 0 auto;
+  width: 100%;
+  max-width: 800px;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 18px 16px;
+}
+
+.resto .resto__poster {
+  width: 100%;
+  max-height: 350px;
+  max-width: 650px;
+}
+
+.resto .resto__info h4 {
+  margin: 8px 0;
+  padding-top: 20px;
+}
+
+.resto .resto__info p {
+  font-size: 18px;
+}
+
+/*
+Like btn
+*/
+.like {
+  width: 55px;
+  height: 55px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #db0000;
+
+  position: fixed;
+  bottom: 16px;
+  right: 16px;
+  border-radius: 50%;
+  border: 0;
+
+  font-size: 18px;
+  color: white;
+  cursor: pointer;
+}
+
+/*
+Detail
+*/
+.chips li {
+  display: inline-block;
+  padding: 0 25px;
+  margin: 16px 0 0 0;
+  height: 50px;
+  font-size: 14px;
+  line-height: 50px;
+  border-radius: 5px;
+  background-color: #f1f1f1;
+  transition: 0.3s;
+}
+.chips li:hover {
+  display: flexbox;
+  padding: 0 25px;
+  margin: 0px 0 0 0;
+  height: 50px;
+  font-size: 14px;
+  font-weight: bold;
+  line-height: 50px;
+  border-radius: 5px;
+  color: #fff;
+  background-color: #1f79c3;
+}
+
+.review {
+  display: block;
+  padding: 25px;
+  margin: 25px 0 0 0;
+  border-radius: 5px;
+  background-color: #f1f1f1;
+}
+
+.restaurant-menu,
+.user-review {
+  margin: 0 auto;
+  width: 100%;
+  max-width: 800px;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 18px 16px;
+}
+
+.restaurant-text {
+  font-weight: lighter;
+  margin: 16px;
+}
+
+/* Tambahkan style untuk form review */
+#customerReviewForm {
+  margin-top: 20px;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#customerReviewForm h3 {
+  font-size: 1.5em;
+  margin-bottom: 10px;
+}
+
+#reviewForm {
+  display: grid;
+  gap: 10px;
+}
+
+#reviewForm label {
+  font-weight: bold;
+}
+
+#reviewForm input[type='text'],
+#reviewForm textarea {
+  width: 100%;
+  font-size: 16px;
+  min-width: 44px;
+  min-height: 44px;
+}
+
+#reviewForm button {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  min-width: 44px;
+  min-height: 44px;
+}
+
+#reviewForm button:hover {
+  background-color: #0056b3;
+}
+
+/*
+ Footer
+*/
+
+footer {
+  margin: 20px 0px 5px 0px;
+  padding: 16px;
+}
+
+footer p {
+  text-align: center;
+  color: #aaaaaa;
+}
+
+footer p a {
+  color: #db0000;
+  text-decoration: none;
+  display: inline-block;
+  min-width: 44px;
+  min-height: 44px;
+}
